@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$GENZ - The Meme Era</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        /*
+         * CSS for $GENZ: Blinking, Low-Fi, Maximum Vibe - FINAL INTERACTIVE MODE
+         */
+        :root {
+            --genz-pink: #FF00FF; /* Electric Magenta */
+            --genz-green: #00FF00; /* Neon Green */
+            --genz-blue: #00FFFF; /* Aqua/Cyan */
+            --text-color: var(--genz-green);
+            --font-stack: 'Comic Sans MS', 'Arial Black', sans-serif;
+        }
+
+        /* --- Global & Rainbow Background --- */
+        body {
+            /* Enables vertical scrolling and sets the rainbow background */
+            background-color: black;
+            background-image: url('background.gif');
+            background-size: cover;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            color: var(--text-color);
+            font-family: var(--font-stack);
+            margin: 0;
+            padding: 20px 0;
+            text-align: center;
+            overflow-x: hidden;
+            min-height: 100vh;
+            /* Padding to avoid the fixed footer covering content */
+            padding-bottom: 166px;
+            transition: transform 0.05s;
+        }
+
+        /* --- EARTHQUAKE PARTY CHAOS MODE CSS --- */
+        .earthquake-mode-active {
+            animation: earthquakeShake 0.05s infinite alternate, seizureLights 0.05s infinite !important;
+            background-image: none !important;
+        }
+
+        @keyframes earthquakeShake {
+            0% { transform: translate(3px, 3px) rotate(1deg); }
+            100% { transform: translate(-3px, -3px) rotate(-1deg); }
+        }
+
+        @keyframes seizureLights {
+            0% { background-color: red; }
+            20% { background-color: var(--genz-blue); }
+            40% { background-color: var(--genz-green); }
+            60% { background-color: yellow; }
+            80% { background-color: var(--genz-pink); }
+            100% { background-color: red; }
+        }
+
+        /* Styling for the Vibe Bar when broken */
+        .vibe-broken {
+            background-color: transparent !important;
+            border: 5px dashed red !important;
+            animation: borderFlash 0.1s infinite alternate;
+        }
+
+        @keyframes borderFlash {
+            from { border-color: red; }
+            to { border-color: yellow; }
+        }
+
+        /* --- Individual Meme Party Mode --- */
+        .meme-party-mode {
+            border: 5px solid transparent;
+            border-radius: 10px;
+            animation: memePartyGlow 0.1s infinite alternate, memeBorderFlash 0.5s infinite;
+        }
+
+        @keyframes memePartyGlow {
+            from { box-shadow: 0 0 10px var(--genz-pink), 0 0 20px var(--genz-green); }
+            to { box-shadow: 0 0 5px var(--genz-blue), 0 0 30px yellow; }
+        }
+
+        @keyframes memeBorderFlash {
+            0% { border-color: red; }
+            33% { border-color: var(--genz-blue); }
+            66% { border-color: var(--genz-green); }
+            100% { border-color: var(--genz-pink); }
+        }
+
+
+        /* --- Animated STOP Button (New) --- */
+        #stop-chaos-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 20px 40px;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: 8px solid red;
+            border-radius: 15px;
+            background-color: black;
+            color: white;
+            animation: pulseFast 0.3s infinite alternate;
+            box-shadow: 0 0 30px red;
+            transition: all 0.1s;
+        }
+
+        #stop-chaos-button:hover {
+            background-color: red;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        @keyframes pulseFast {
+            from { transform: scale(1.0); box-shadow: 0 0 10px red; }
+            to { transform: scale(1.05); box-shadow: 0 0 50px red; }
+        }
+
+
+        /* --- Content Container (Keeps text readable over chaos) --- */
+        #content-wrapper {
+            position: relative;
+            z-index: 10;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+            padding-bottom: 50px;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Class for hiding content and making memes clickable */
+        .hidden-content {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* --- Header & Glitch Effect --- */
+        .header-container {
+            border: 5px solid var(--genz-pink);
+            padding: 20px;
+            box-shadow: 0 0 20px var(--genz-pink);
+            margin-bottom: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 4em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            line-height: 1.2;
+            text-shadow: 4px 4px 0 var(--genz-blue), -4px -4px 0 var(--genz-pink);
+            animation: colorShiftText 2s infinite alternate;
+        }
+
+        @keyframes colorShiftText {
+            0% { text-shadow: 4px 4px 0 var(--genz-blue), -4px -4px 0 var(--genz-pink); }
+            50% { text-shadow: 4px -4px 0 var(--genz-green), -4px 4px 0 var(--genz-blue); }
+            100% { text-shadow: -4px 4px 0 var(--genz-pink), 4px -4px 0 var(--genz-green); }
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1em;
+            margin-left: 5px;
+            background-color: var(--genz-green);
+            animation: blink 0.7s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { background-color: transparent }
+            50% { background-color: var(--genz-green) }
+        }
+
+        /* --- Main Content & Animation --- */
+        .content-section {
+            padding: 30px;
+            margin: 20px auto;
+            border: 3px dashed var(--genz-blue);
+            background-color: rgba(0, 255, 255, 0.1);
+        }
+
+        h2 {
+            color: var(--genz-pink);
+            font-size: 2.5em;
+            text-decoration: underline wavy var(--genz-green);
+            margin-top: 0;
+            animation: shake 0.5s infinite alternate;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            25% { transform: translate(-1px, -2px) rotate(-1deg); }
+            50% { transform: translate(-3px, 0px) rotate(1deg); }
+            75% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(3px, 1px) rotate(-1deg); }
+        }
+
+        p { font-size: 1.2em; line-height: 1.6; margin: 15px 0; }
+
+        /* --- SCROLLING KEYFRAMES --- */
+        @keyframes text-scroll {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* --- FIXED CONTAINER FOR SCROLLING DISCLAIMER --- */
+        #scrolling-disclaimer-bar {
+            position: fixed;
+            bottom: 100px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            z-index: 25;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-top: 2px dashed var(--genz-pink);
+            border-bottom: 2px dashed var(--genz-pink);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Make sure the text itself is styled for scrolling */
+        #scrolling-disclaimer-bar p {
+            margin: 0;
+            width: 100%;
+        }
+
+        .disclaimer-text {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 15px 0;
+            color: #FFFFFF;
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+            animation: text-scroll 25s linear infinite;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-image: url('rainbow.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: black;
+            box-shadow: 0 5px 0 var(--genz-blue);
+            transition: all 0.1s;
+        }
+
+        .buy-button:hover { background-color: var(--genz-pink); color: black; box-shadow: 0 5px 0 var(--genz-green); transform: scale(1.05); }
+        .buy-button:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--genz-blue); }
+
+        .meter-button {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-image: url('rainbow.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: black;
+            box-shadow: 0 5px 0 var(--genz-blue);
+            transition: all 0.1s;
+        }
+
+        .meter-button:hover { background-color: var(--genz-pink); color: black; box-shadow: 0 5px 0 var(--genz-green); transform: scale(1.05); }
+        .meter-button:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--genz-blue); }
+
+        /* --- The Meme PNG Chaos Container (Fixed to Viewport) --- */
+        #meme-chaos-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .meme-png {
+            position: absolute;
+            height: auto;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+            cursor: grab;
+            pointer-events: auto;
+            transform-origin: center;
+        }
+
+        /* --- Vibe Toggle Button (Top Left) --- */
+        #vibe-toggle-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 101;
+            padding: 8px 15px;
+            font-family: var(--font-stack);
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+            border: 3px solid var(--genz-pink);
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: var(--genz-green);
+            box-shadow: 0 0 10px var(--genz-pink);
+            transition: all 0.1s;
+        }
+
+        #vibe-toggle-button:hover {
+            background-color: var(--genz-pink);
+            color: black;
+        }
+
+        /* --- New Center Vibe On Button --- */
+        #center-vibe-on-button {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            padding: 30px 60px;
+            font-size: 3em;
+            font-family: var(--font-stack);
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: 5px solid var(--genz-green);
+            border-radius: 15px;
+            background-color: var(--genz-pink);
+            color: black;
+            box-shadow: 0 0 30px var(--genz-green), 0 0 10px var(--genz-pink) inset;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Class to permanently hide the center button when the content is visible */
+        .hidden-button {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* --- Fixed Link Footer (ENLARGED) --- */
+        #link-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 20;
+            background-color: rgba(0, 0, 0, 0.95);
+            border-top: 3px solid var(--genz-green);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 -5px 20px rgba(0, 255, 0, 0.5);
+            font-family: var(--font-stack);
+        }
+
+        #link-footer a {
+            color: var(--genz-blue);
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 2px solid var(--genz-blue);
+            border-radius: 5px;
+            transition: all 0.1s;
+        }
+
+        #link-footer a:hover {
+            color: var(--genz-pink);
+            border-color: var(--genz-pink);
+            transform: scale(1.05);
+        }
+
+        /* --- Contract Address (CA) Button Styling (ENLARGED) --- */
+        #ca-button {
+            background-color: var(--genz-pink);
+            color: black;
+            padding: 12px 20px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border: 4px solid var(--genz-green);
+            border-radius: 10px;
+            cursor: pointer;
+            text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+            transition: all 0.1s;
+            position: relative;
+        }
+
+        #ca-button:hover {
+            background-color: var(--genz-green);
+            border-color: var(--genz-pink);
+            transform: scale(1.02);
+        }
+
+        /* Tooltip/Copy Message Styling (ENLARGED) */
+        .copy-message {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--genz-green);
+            color: black;
+            padding: 7px 12px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        .copy-message.visible {
+            opacity: 1;
+        }
+
+        /* ======================================= */
+        /* === MOBILE RESPONSIVENESS (<= 900px) === */
+        /* ======================================= */
+        @media (max-width: 900px) {
+            body {
+                /* Reduce required bottom padding as footer is smaller */
+                padding-bottom: 120px;
+            }
+
+            /* Main Headline Reduction */
+            h1 {
+                font-size: 2.5em;
+                letter-spacing: 2px;
+                text-shadow: 2px 2px 0 var(--genz-blue), -2px -2px 0 var(--genz-pink);
+            }
+            .header-container {
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+
+            /* Content and Sub-Headers */
+            #content-wrapper {
+                margin: 0 10px; /* Reduce side margin */
+                padding: 15px;
+                max-width: 100%;
+            }
+            .content-section {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1.0em;
+                line-height: 1.4;
+            }
+
+            /* Vibe On Button */
+            #center-vibe-on-button {
+                padding: 15px 30px;
+                font-size: 1.5em;
+                border: 3px solid var(--genz-green);
+            }
+
+            /* Buy Button */
+            .buy-button {
+                padding: 10px 20px;
+                font-size: 1.5em;
+            }
+
+            .meter-button {
+                padding: 10px 20px;
+                font-size: 1.5em;
+            }
+
+            /* Footer Styling Adjustments */
+            #link-footer {
+                padding: 10px 0;
+                gap: 10px; /* Tighter spacing */
+                flex-wrap: wrap; /* Allow wrapping if needed */
+            }
+            #link-footer a {
+                font-size: 1em;
+                padding: 5px 10px;
+            }
+
+            /* CA Button Shrink */
+            #ca-button {
+                padding: 8px 12px;
+                font-size: 1.0em;
+                border: 3px solid var(--genz-green);
+            }
+
+            /* Scrolling Disclaimer Bar Adjustments */
+            #scrolling-disclaimer-bar {
+                bottom: 80px; /* Move up to accommodate smaller footer */
+                height: 40px;
+            }
+            .disclaimer-text {
+                font-size: 1.0em;
+            }
+
+            /* STOP CHAOS Button */
+            #stop-chaos-button {
+                padding: 10px 20px;
+                font-size: 1.5em;
+                border: 5px solid red;
+            }
+
+            /* Video scaling for mobile */
+            #site-presentation {
+                width: 100%; /* Use full available width on mobile */
+                max-width: none;
+                margin: 20px auto; /* Reduced margin */
+                border-width: 3px;
+            }
+
+            /* Logo scaling for mobile */
+            #site-logo {
+                max-width: 250px; /* Smaller size on mobile */
+                margin-bottom: 5px; /* Less space below */
+                filter: drop-shadow(0 0 10px var(--genz-blue));
+            }
+        }
+
+        /* --- New Video Styling --- */
+        #site-presentation {
+            display: block;
+            width: 100%; /* Occupy most of the content-wrapper width */
+            max-width: 993px; /* Max size on large screens */
+            margin: 30px auto; /* Centers the video and adds spacing */
+            height: auto;
+
+            /* Neon border style */
+            border: 5px solid var(--genz-green);
+            box-shadow: 0 0 20px var(--genz-green), inset 0 0 10px var(--genz-blue);
+            background-color: black;
+            transition: all 0.3s;
+        }
+
+        #site-presentation:hover {
+            border-color: var(--genz-pink);
+            box-shadow: 0 0 30px var(--genz-pink), inset 0 0 15px var(--genz-green);
+        }
+
+        /* --- New Logo Styling (Desktop) --- */
+        #site-logo {
+            display: block;
+            margin: 0 auto 10px auto; /* Centers the image and adds space below */
+            max-width: 300px; /* Maximum size on desktop */
+            height: auto;
+            /* Add a signature Gen Z glow */
+            filter: drop-shadow(0 0 15px var(--genz-blue)) drop-shadow(0 0 10px var(--genz-pink));
+            transition: transform 0.3s ease-in-out; /* For a subtle hover effect */
+        }
+
+        #site-logo:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="genz-audio" loop>
+        <source src="genz_music.mp3" type="audio/mp3">
+        Your browser does not support the audio element. (Cringe.)
+    </audio>
+
+    <div id="meme-chaos-layer">
+        </div>
+
+    <button id="center-vibe-on-button">CLICK ME</button>
+
+    <div id="content-wrapper">
+        <button id="vibe-toggle-button">VIBE OFF (Play)</button>
+
+        <div class="header-container">
+            <img src="logo.png" alt="$GENZ Logo" id="site-logo">
+            <h1>
+                <span id="headline-text"></span><span class="cursor"></span>
+            </h1>
+        </div>
+
+        <video id="site-presentation" controls muted autoplay loop>
+            <source src="presentation.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="content-section" id="vibe-meter-section">
+            <h2 style="margin-bottom: 10px;">VIBE METER: <span id="vibe-score" style="color:var(--genz-pink); text-decoration:none;">LOADING...</span></h2>
+            <div id="vibe-bar-container" style="width: 80%; height: 30px; margin: 0 auto; border: 3px solid var(--genz-green); background-color: #333;">
+                <div id="vibe-bar" style="width: 0%; height: 100%; background-color: var(--genz-pink); transition: width 0.1s ease-out;"></div>
+            </div>
+            <button id="stop-meter-button" class="meter-button" style="font-size: 1.2em; padding: 10px 20px; margin-top: 10px; margin-bottom: 10px; background-color: var(--genz-blue);">
+                PAUSE METER
+            </button>
+            <p style="font-size: 0.9em; margin-top: 10px;">Vibe Status: <span id="vibe-status">Awaiting input...</span></p>
+            <p style="font-size: 1.1em; color: #00FFFF; font-weight: bold; margin-top: 5px;">(Drag memes to increase Vibe!)</p>
+        </div>
+        <div class="content-section">
+            <h2>Vibe Check Status: <span style="color:var(--genz-green);">Passed</span></h2>
+            <p>
+                Welcome to $GENZ, where the ROI is measured in dopamine hits and the only financial advice is "don't be a boomer." We're not sure what a whitepaper is, but we do have a killer TikTok strategy.
+            </p>
+            <p>
+                It's giving decentralized finance, but make it cringe-proof. Seriously, look at this. You can't unsee it.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Apes Together Strong. (And we AIN'T stoppin')</h2>
+            <p>
+                Stop scrolling through endless threads and start minting history. Your grandma wouldn't understand. That's how you know it's good.
+            </p>
+            <button class="buy-button" onclick="alert('Lmao, you actually tried to click it? Bro gotta study Gen Z')">
+                AQUIRE GENZ NOW
+            </button>
+        </div>
+
+        <div class="content-section">
+            <h2>The *Roadmap* (Or as we call it, "The Scroll")</h2>
+            <p>
+                Phase 1: Launch (We did it! Send tweet.)<br>
+                Phase 2: Moon (Or maybe just a nice, steady climb. Who knows? Buy the dip.)<br>
+                Phase 3: Acquire a Yacht (Prolly a lambo, tbh, lil bro.)
+            </p>
+        </div>
+
+        <div id="scrolling-disclaimer-bar">
+            <footer>
+                <p class="disclaimer-text">
+                   DISCLAIMER: This is not financial advice. We're just a bunch of people who watched the same 12-second TikToks. Please do your own research (DYOR). We are not responsible for your life choices. This website is best viewed on a broken CRT monitor. © 2025 $GENZ Corp. All rights reserved. (Lmao, 'Corp'.)
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    <div id="link-footer">
+        <a href="https://x.com/GENZ_on_SOL" target="_blank">X (Twitter)</a>
+        <a href="https://x.com/i/communities/1978189560585547990" target="_blank">X Community</a>
+        <a href="https://t.me/genzsolportal" target="_blank">Telegram</a>
+
+        <button id="ca-button" data-ca="coming very soon">
+            <span id="ca-display-text">CA: coming very soon (Copy)</span>
+            <div id="copy-message" class="copy-message">Copied!</div>
+        </button>
+    </div>
+    <script>
+        /*
+         * JAVASCRIPT: Typing/Glitch Effect + Interactive Meme Chaos Generator (BOUNCING ENGINE)
+         * FINAL VERSION WITH MOBILE SPEED AND SIZE SCALING
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- CRITICAL: SPEED SCALING FIX FOR MOBILE ---
+            // Use 900px as the breakpoint. Speed is halved on smaller screens.
+            const speedMultiplier = window.innerWidth < 900 ? 0.5 : 1.0;
+            // --- END NEW SPEED SCALING FIX ---
+
+            // --- Elements ---
+            const headlineElement = document.getElementById('headline-text');
+            const contentWrapper = document.getElementById('content-wrapper');
+            const toggleButton = document.getElementById('vibe-toggle-button');
+            const centerButton = document.getElementById('center-vibe-on-button');
+            const memeContainer = document.getElementById('meme-chaos-layer');
+            const audio = document.getElementById('genz-audio');
+
+            // --- Vibe Meter Elements ---
+            const vibeScoreElement = document.getElementById('vibe-score');
+            const vibeBarElement = document.getElementById('vibe-bar');
+            const vibeStatusElement = document.getElementById('vibe-status');
+            const vibeBarContainer = document.getElementById('vibe-bar-container');
+            const stopMeterButton = document.getElementById('stop-meter-button');
+            let isVibeMeterPaused = false; // <-- NEW FLAG
+
+            // --- Vibe On Startup Logic ---
+            contentWrapper.classList.add('hidden-content');
+            centerButton.classList.remove('hidden-button');
+            audio.volume = 0.3;
+
+            // --- Typing & Glitch Effect ---
+            const headlineText = "$GENZ: The Greatest Meme Era. (Certified Brainrot)";
+            let i = 0;
+            const speed = 100;
+
+            function typeWriter() {
+                if (i < headlineText.length) {
+                    headlineElement.innerHTML += headlineText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                } else {
+                    setTimeout(glitchEffect, 1000);
+                }
+            }
+
+            function glitchEffect() {
+                setInterval(() => {
+                    const originalText = headlineElement.innerHTML;
+                    const indexToReplace = Math.floor(Math.random() * originalText.length);
+                    const randomChar = String.fromCharCode(33 + Math.floor(Math.random() * 94));
+
+                    if (Math.random() < 0.20) {
+                        const glitchedText = originalText.substring(0, indexToReplace) + randomChar + originalText.substring(indexToReplace + 1);
+                        headlineElement.innerHTML = glitchedText;
+                    } else {
+                        headlineElement.innerHTML = headlineText;
+                    }
+                }, 150);
+            }
+
+            typeWriter();
+
+            // --- Vibe Toggle Logic ---
+            function vibeToggle() {
+                contentWrapper.classList.toggle('hidden-content');
+                centerButton.classList.toggle('hidden-button');
+
+                if (audio.paused) {
+                    audio.play().catch(e => console.log('Audio playback failed on click.'));
+                }
+
+                if (contentWrapper.classList.contains('hidden-content')) {
+                    toggleButton.textContent = "VIBE ON (Read)";
+                    toggleButton.style.backgroundColor = 'var(--genz-green)';
+                    toggleButton.style.color = 'black';
+                } else {
+                    toggleButton.textContent = "VIBE OFF (Play)";
+                    toggleButton.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                    toggleButton.style.color = 'var(--genz-green)';
+                }
+            }
+
+            toggleButton.addEventListener('click', vibeToggle);
+            centerButton.addEventListener('click', vibeToggle);
+
+            // --- Copy-to-Clipboard Functionality ---
+            const caButton = document.getElementById('ca-button');
+            const copyMessage = document.getElementById('copy-message');
+            const caDisplayText = document.getElementById('ca-display-text');
+            const contractAddress = caButton.getAttribute('data-ca');
+
+            caButton.addEventListener('click', () => {
+                navigator.clipboard.writeText(contractAddress).then(() => {
+                    copyMessage.classList.add('visible');
+                    const originalText = caDisplayText.textContent;
+                    caDisplayText.textContent = 'CA: Copied!';
+
+                    setTimeout(() => {
+                        copyMessage.classList.remove('visible');
+                        caDisplayText.textContent = originalText;
+                    }, 1500);
+                }).catch(err => {
+                    console.error('Could not copy text: ', err);
+                });
+            });
+
+
+            // --- Interactive Meme Chaos Generator (Bouncing Collision Engine) ---
+            const memeFiles = [
+                "shrek.png", "troll.png", "wojak.png", "datboi.png", "mlg.png",
+                "tiktok.png", "instagram.png", "twitter.png", "snapchat.png",
+                "brainrot.png", "fortnite.png", "roblox.png", "minecraft.png",
+                "bitcoin.png", "ps4.png", "vaper.png", "chad.png", "fortnite2.gif",
+                "lgtd.png", "thuglife.png", "lol.png", "sigma.png", "doritos2.gif",
+                "whatsapp.png", "pepe.png", "chillguy.png", "dab.png", "cringe.png", "skull.png",
+                "aura.png", "gta5.png", "squid.png", "skibidi.gif", "happyface.png",
+                "amongus.png", "frog.gif", "joi.png", "bob.png", "mike.png",
+                "doge.png", "banana.gif", "megamind.png", "rizz.png", "nyan.gif",
+                "illuminati.gif", "doritos.png", "npc.png", "adidas.png", "supreme.png", "nike.png",
+                "lmao.png", "wow.gif", "bman.gif", "flappy.png", "mtndew.png", "sanic.png", "lenny.png", "gnome.png"
+            ];
+
+            // Meme Size Scaling (Adjusted base sizes to allow for better scaling)
+            const desktopLargeSize = 300;
+            const desktopBigSize = 180;
+            const desktopSmallSize = 150;
+            const desktopTinySize = 100;
+            // Mobile Scaling Factor (Further scale down the meme size on mobile for density)
+            const sizeScaleFactor = window.innerWidth < 900 ? 0.7 : 0.7;
+
+            const customMemeSizes = {
+                'chillguy.png': desktopLargeSize, 'snapchat.png': desktopBigSize, 'tiktok.png': desktopLargeSize,
+                'brainrot.png': desktopBigSize, 'amongus.png': desktopBigSize, 'mike.png': desktopLargeSize,
+                'mlg.png': desktopLargeSize, 'happyface.png': desktopSmallSize, 'dab.png': desktopBigSize,
+                'aura.png': desktopLargeSize, 'vaper.png': desktopBigSize, 'banana.gif': desktopSmallSize,
+                'lol.png': desktopBigSize, 'wojak.png': desktopSmallSize, 'pepe.png': desktopBigSize,
+                'thuglife.png': desktopBigSize, 'shrek.png': desktopSmallSize, 'troll.png': desktopSmallSize,
+                'datboi.png': desktopSmallSize, 'instagram.png': desktopBigSize, 'twitter.png': desktopBigSize,
+                'fortnite.png': desktopBigSize, 'roblox.png': desktopBigSize, 'minecraft.png': desktopBigSize,
+                'bitcoin.png': desktopBigSize, 'ps4.png': desktopBigSize, 'chad.png': desktopBigSize, 'skull.png': desktopBigSize,
+                'lgtd.png': desktopBigSize, 'sigma.png': desktopBigSize, 'whatsapp.png': desktopBigSize,
+                'gta5.png': desktopBigSize, 'squid.png': desktopTinySize, 'skibidi.gif': desktopBigSize,
+                'frog.gif': desktopBigSize, 'joi.png': desktopSmallSize, 'bob.png': desktopBigSize, 'cringe.png': desktopBigSize,
+                'doge.png': desktopBigSize, 'megamind.png': desktopSmallSize, 'rizz.png': desktopBigSize,
+                'nyan.gif': desktopBigSize, 'illuminati.gif': desktopBigSize, 'doritos.png': desktopSmallSize,
+                'doritos2.gif': desktopBigSize, 'npc.png': desktopBigSize, 'adidas.png': desktopBigSize,
+                'supreme.png': desktopBigSize, 'nike.png': desktopBigSize, 'fortnite2.gif': desktopLargeSize,
+                'lmao.png': desktopBigSize, 'wow.gif': desktopBigSize, 'bman.gif': desktopBigSize, 'flappy.png': desktopBigSize,
+                'mtndew.png': desktopBigSize, 'sanic.png': desktopBigSize, 'lenny.png': desktopBigSize, 'gnome.png': desktopBigSize,
+            };
+
+            const leftMax = 30;
+            const rightMin = 70;
+            let memeObjects = [];
+
+            // --- Meme Object Class ---
+            class Meme {
+                constructor(element, size) {
+                    this.el = element;
+                    this.width = size;
+                    this.height = this.el.offsetHeight > 0 ? this.el.offsetHeight : size;
+
+                    this.x = parseFloat(this.el.style.left);
+                    this.y = parseFloat(this.el.style.top);
+
+                    // Apply speed multiplier for initial speed (Slowing down the base speed)
+                    const baseSpeed = (0.3 + Math.random() * 0.5) * speedMultiplier;
+                    this.vx = (Math.random() < 0.5 ? 1 : -1) * baseSpeed;
+                    this.vy = (Math.random() < 0.5 ? 1 : -1) * baseSpeed;
+
+                    this.rotation = Math.random() * 360;
+                    this.vr = (Math.random() < 0.5 ? 1 : -1) * (0.1 + Math.random() * 0.5);
+                }
+
+                update() {
+                    const viewWidth = window.innerWidth;
+                    const viewHeight = window.innerHeight;
+                    const bounceFactor = 1.6;
+                    const MAX_SPEED = 10.0;
+
+                    // 1. Move
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.rotation += this.vr;
+
+                    // CRITICAL: Update height in case it finally loaded
+                    if (this.height === this.width && this.el.offsetHeight > 0) {
+                        this.height = this.el.offsetHeight;
+                    }
+
+                    // 2. Horizontal Collision Check (Left/Right Walls)
+                    if (this.x + this.width > viewWidth) {
+                        this.x = viewWidth - this.width;
+                        this.vx = -Math.abs(this.vx) * bounceFactor;
+                    } else if (this.x < 0) {
+                        this.x = 0;
+                        this.vx = Math.abs(this.vx) * bounceFactor;
+                    }
+
+                    // 3. Vertical Collision Check (Top/Bottom Walls)
+                    if (this.y + this.height > viewHeight) {
+                        this.y = viewHeight - this.height;
+                        this.vy = -Math.abs(this.vy) * bounceFactor;
+
+                        // Small fix: Ensure height is correct upon first bounce if it was missed
+                        if (this.height === this.width && this.el.offsetHeight > 0) {
+                            this.height = this.el.offsetHeight;
+                        }
+                    } else if (this.y < 0) {
+                        this.y = 0;
+                        this.vy = Math.abs(this.vy) * bounceFactor;
+                    }
+
+                    // 4. Apply Speed Limit
+                    this.vx = Math.min(Math.abs(this.vx), MAX_SPEED) * Math.sign(this.vx);
+                    this.vy = Math.min(Math.abs(this.vy), MAX_SPEED) * Math.sign(this.vy);
+
+                    // 5. Apply new position and rotation
+                    this.el.style.left = `${this.x}px`;
+                    this.el.style.top = `${this.y}px`;
+                    this.el.style.transform = `rotate(${this.rotation}deg)`;
+                }
+            }
+
+            // --- Animation Loop with Vibe Meter Logic and Decay (MAX VIBE MODE) ---
+            let isEarthquakeMode = false;
+
+            function animate() {
+                let totalSpeed = 0;
+
+                // !!! CRITICAL FIX: SCALE VIBE MAX BY SPEED MULTIPLIER !!!
+                // Base desktop VibeMax is memeObjects.length * 6.0.
+                const vibeMaxBase = memeObjects.length * 6.0;
+                const vibeMax = vibeMaxBase * speedMultiplier; // Mobile needs less momentum to trigger.
+                let vibePercentage = 0;
+
+                // --- PHYSICS UPDATE ---
+                // Damping factor is 1 (no decay) if in chaos mode, otherwise it decays (0.9995)
+                const currentDampingFactor = isEarthquakeMode ? 1.0 : 0.9995;
+
+                // Update positions and calculate speed
+                memeObjects.forEach(meme => {
+
+                    // Apply damping/speed injection
+                    if (isEarthquakeMode) {
+                        // Permanent Chaos: Add a big constant speed and rotate wildly
+                        meme.vx += Math.sign(meme.vx) * 0.5; // Inject velocity
+                        meme.vy += Math.sign(meme.vy) * 0.5;
+                        meme.vr += Math.random() * 0.5 - 0.25; // Random rotation burst
+                    } else {
+                        // Apply normal damping
+                        meme.vx *= currentDampingFactor;
+                        meme.vy *= currentDampingFactor;
+                    }
+
+                    // Only move if not actively dragging THIS meme
+                    if (activeMeme === null || meme.el !== activeMeme) {
+                        meme.update();
+                    }
+                    totalSpeed += Math.abs(meme.vx) + Math.abs(meme.vy);
+                });
+
+                if (!isVibeMeterPaused) {
+                    // --- Vibe Meter Logic ---
+                    if (!isEarthquakeMode) {
+                        // Calculate percentage against the scaled VibeMax
+                        vibePercentage = Math.min(100, Math.round((totalSpeed / vibeMax) * 100));
+
+                        if (vibeScoreElement) {
+                            vibeScoreElement.textContent = `${vibePercentage}%`;
+                            vibeBarElement.style.width = `${vibePercentage}%`;
+
+                            // --- Vibe Status Logic ---
+                            if (vibePercentage >= 100) {
+                                triggerEarthquakeMode();
+                            } else if (vibePercentage < 20) {
+                                vibeStatusElement.textContent = "CRINGE: Needs more dopamine hits!";
+                                vibeStatusElement.style.color = 'red';
+                            } else if (vibePercentage < 50) {
+                                vibeStatusElement.textContent = "MID: The dip is real, fren.";
+                                vibeStatusElement.style.color = 'yellow';
+                            } else if (vibePercentage < 80) {
+                                vibeStatusElement.textContent = "W: Vibes are strong. Diamond hands only.";
+                                vibeStatusElement.style.color = 'var(--genz-blue)';
+                            } else {
+                                vibeStatusElement.textContent = "SENDING IT! 🚀 Max Vibe Achieved.";
+                                vibeStatusElement.style.color = 'var(--genz-pink)';
+                            }
+                        }
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            // --- STOP CHAOS BUTTON HANDLER ---
+            function stopChaosMode() {
+                if (!isEarthquakeMode) return;
+
+                // 1. Remove body chaos
+                document.body.classList.remove('earthquake-mode-active');
+
+                // 2. Remove meme chaos
+                memeObjects.forEach(meme => {
+                    meme.el.classList.remove('meme-party-mode');
+                    // Drastically reduce velocities to stop the instant chaos movement
+                    meme.vx *= 0.1;
+                    meme.vy *= 0.1;
+                });
+
+                // 3. Remove the STOP button
+                const stopButton = document.getElementById('stop-chaos-button');
+                if (stopButton) stopButton.remove();
+
+                // 4. Reset Vibe Meter to 'Safe Mode'
+                isEarthquakeMode = false;
+                vibeBarElement.classList.remove('vibe-broken');
+                vibeBarContainer.classList.remove('vibe-broken');
+                vibeScoreElement.style.animation = 'none';
+                vibeScoreElement.textContent = '0% - RESET';
+                vibeStatusElement.textContent = 'Safe Mode Engaged. Vibe restored to minimal levels.';
+                vibeStatusElement.style.color = 'gray';
+                vibeBarElement.style.width = '0%';
+
+                // 5. Restore music volume and state
+                audio.volume = 0.3;
+            }
+
+            // --- NEW/UPDATED: EARTHQUAKE MODE HANDLER FUNCTION ---
+            function triggerEarthquakeMode() {
+                if (isEarthquakeMode) return;
+                isEarthquakeMode = true; // Set the flag to true!
+
+                // 1. Activate permanent body/screen shaking and seizure lights
+                document.body.classList.add('earthquake-mode-active');
+
+                // 2. Break the Vibe Bar visually
+                vibeBarElement.classList.add('vibe-broken');
+                vibeBarElement.style.width = '100%';
+                vibeBarContainer.classList.add('vibe-broken');
+
+                // 3. Apply party lights/glow to ALL memes
+                memeObjects.forEach(meme => {
+                    meme.el.classList.add('meme-party-mode');
+
+                    // 💥 CRITICAL FIX: SCALE TURBO SPEED BY SPEED MULTIPLIER 💥
+                    const TURBO_SPEED = 100.0 * speedMultiplier;
+
+                    meme.vx = (Math.random() < 0.5 ? 1 : -1) * TURBO_SPEED;
+                    meme.vy = (Math.random() < 0.5 ? 1 : -1) * TURBO_SPEED;
+
+                    meme.vr = (Math.random() < 0.5 ? 1 : -1) * (10 + Math.random() * 20);
+                });
+
+                // 4. Create and show the animated STOP button
+                const stopButton = document.createElement('button');
+                stopButton.id = 'stop-chaos-button';
+                stopButton.textContent = 'STOP THE CHAOS';
+                stopButton.onclick = stopChaosMode;
+                document.body.appendChild(stopButton);
+
+                // 5. Start the Vibe Number Sequence
+                const hyperVibeSequence = [
+                    '101%', '105%', '150%', '300%', '500%', '1000%', '1000000%', '999Q+% - UNSTOPPABLE'
+                ];
+                let sequenceIndex = 0;
+
+                function hyperVibeTick() {
+                    if (sequenceIndex < hyperVibeSequence.length) {
+                        vibeScoreElement.textContent = hyperVibeSequence[sequenceIndex];
+                        vibeStatusElement.textContent = "MAXIMUM VIBE FAILURE! CRITICAL STATUS!";
+                        vibeStatusElement.style.color = 'white';
+
+                        sequenceIndex++;
+                        setTimeout(hyperVibeTick, 50 + sequenceIndex * 15);
+                    } else {
+                        vibeScoreElement.textContent = '999Q+% - ERROR';
+                        vibeStatusElement.textContent = 'SYSTEM OVERLOAD. PERMANENT CHAOS ENGAGED. 😵‍💫';
+                        vibeScoreElement.style.animation = 'colorShiftText 0.5s infinite alternate';
+                    }
+                }
+
+                // Audio chaos sequence
+                audio.pause();
+                // Check if airhorn.mp3 exists before playing
+                const airhorn = new Audio('airhorn.mp3');
+                airhorn.volume = 1.0;
+                airhorn.play().catch(e => console.log('Airhorn playback failed.'));
+
+                const restartMusic = () => {
+                    audio.play().catch(e => console.log('Music restart failed.'));
+                    audio.volume = 0.6;
+                };
+
+                airhorn.onended = restartMusic;
+                setTimeout(restartMusic, 1000);
+
+                hyperVibeTick();
+            }
+
+            // --- Drag Logic Handlers ---
+            let activeMeme = null;
+            let activeMemeObject = null;
+            let initialX;
+            let initialY;
+            let xOffset = 0;
+            let yOffset = 0;
+
+            function getClientCoords(e) {
+                return e.type.includes("touch")
+                    ? { clientX: e.touches[0].clientX, clientY: e.touches[0].clientY }
+                    : { clientX: e.clientX, clientY: e.clientY };
+            }
+
+            function dragStart(e) {
+                activeMeme = e.target;
+                if (!activeMeme.classList.contains('meme-png')) return;
+                e.preventDefault();
+
+                activeMemeObject = memeObjects.find(m => m.el === activeMeme);
+
+                activeMeme.style.zIndex = 100;
+                activeMeme.style.transition = 'none';
+
+                const { clientX, clientY } = getClientCoords(e);
+                initialX = activeMemeObject.x;
+                initialY = activeMemeObject.y;
+
+                xOffset = clientX - initialX;
+                yOffset = clientY - initialY;
+
+                document.addEventListener("mouseup", dragEnd);
+                document.addEventListener("mousemove", drag);
+                document.addEventListener("touchend", dragEnd);
+                document.addEventListener("touchmove", drag);
+            }
+
+            function dragEnd(e) {
+                if (!activeMeme) return;
+
+                activeMeme.style.zIndex = activeMeme.originalZIndex;
+
+                if (activeMemeObject) {
+                    activeMemeObject.x = parseFloat(activeMeme.style.left);
+                    activeMemeObject.y = parseFloat(activeMeme.style.top);
+
+                    // Apply speed multiplier for drag-release speed
+                    const baseSpeed = (1 + Math.random() * 1.25) * speedMultiplier;
+                    const MAX_SPEED_DROP = 10.0;
+
+                    let newVx = (Math.random() < 0.5 ? 1 : -1) * baseSpeed;
+                    let newVy = (Math.random() < 0.5 ? 1 : -1) * baseSpeed;
+
+                    activeMemeObject.vx = Math.min(Math.abs(newVx), MAX_SPEED_DROP) * Math.sign(newVx);
+                    activeMemeObject.vy = Math.min(Math.abs(newVy), MAX_SPEED_DROP) * Math.sign(newVy);
+                }
+
+                document.removeEventListener("mouseup", dragEnd);
+                document.removeEventListener("mousemove", drag);
+                document.removeEventListener("touchend", dragEnd);
+                document.removeEventListener("touchmove", drag);
+
+                activeMeme = null;
+                activeMemeObject = null;
+                xOffset = 0;
+                yOffset = 0;
+            }
+
+            function drag(e) {
+                if (!activeMeme) return;
+
+                const { clientX, clientY } = getClientCoords(e);
+
+                let newX = clientX - xOffset;
+                let newY = clientY - yOffset;
+
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+                const memeWidth = activeMeme.offsetWidth;
+                const memeHeight = activeMeme.offsetHeight;
+
+                // Boundary Constraint Logic
+                newX = Math.max(0, newX);
+                newX = Math.min(viewportWidth - memeWidth, newX);
+                newY = Math.max(0, newY);
+                newY = Math.min(viewportHeight - memeHeight, newY);
+
+                activeMeme.style.left = `${newX}px`;
+                activeMeme.style.top = `${newY}px`;
+
+                if (activeMemeObject) {
+                    activeMemeObject.x = newX;
+                    activeMemeObject.y = newY;
+                }
+            }
+
+            // --- Initial Meme Generation ---
+            memeFiles.forEach(fileName => {
+                const img = document.createElement('img');
+                img.src = fileName;
+                img.alt = fileName.split('.')[0];
+                img.classList.add('meme-png');
+
+                let finalWidth;
+                if (customMemeSizes[fileName]) {
+                    finalWidth = customMemeSizes[fileName];
+                } else {
+                    finalWidth = 70 + Math.random() * 50;
+                }
+
+                // Apply size scaling factor
+                finalWidth *= sizeScaleFactor;
+
+                img.style.width = `${finalWidth}px`;
+
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+
+                let xPosition_vw;
+                if (Math.random() < 0.5) {
+                    xPosition_vw = Math.random() * leftMax;
+                } else {
+                    xPosition_vw = rightMin + (Math.random() * (100 - rightMin));
+                }
+
+                let initialLeftPx = (xPosition_vw / 100) * viewportWidth;
+                let initialTopPx = (Math.random() * 100 / 100) * viewportHeight;
+
+                img.style.top = `${initialTopPx}px`;
+                img.style.left = `${initialLeftPx}px`;
+
+                img.originalZIndex = 2;
+                img.style.zIndex = img.originalZIndex;
+
+                img.addEventListener("mousedown", dragStart);
+                img.addEventListener("touchstart", dragStart);
+
+                memeContainer.appendChild(img);
+
+                // Function to create the Meme object (handles async image loading)
+                const createMemeObject = () => {
+                     memeObjects.push(new Meme(img, finalWidth));
+                };
+
+                // Add the Meme object when the image loads
+                img.onload = createMemeObject;
+                if (img.complete) {
+                     createMemeObject();
+                }
+            });
+
+            stopMeterButton.addEventListener('click', () => {
+                isVibeMeterPaused = !isVibeMeterPaused;
+
+                if (isVibeMeterPaused) {
+                    // Pause State
+                    stopMeterButton.textContent = 'METER RESTART';
+                    stopMeterButton.style.backgroundColor = 'var(--genz-pink)';
+                    stopMeterButton.style.color = 'black';
+                    vibeStatusElement.textContent = 'VIBE METER FROZEN: Stasis Engaged.';
+                    vibeStatusElement.style.color = 'gray';
+
+                    // NOTE: The requestAnimationFrame is currently running, but the 'if (isVibeMeterPaused)' check in animate() will halt the updates.
+                } else {
+                    // Resume State
+                    stopMeterButton.textContent = 'PAUSE METER';
+                    stopMeterButton.style.backgroundColor = 'var(--genz-blue)';
+                    stopMeterButton.style.color = 'white';
+                    // When resuming, the animate loop will pick up and recalculate the status immediately.
+
+                    // Crucially, if the meter was paused, we need to ensure the animation loop is running.
+                    // Since your loop uses requestAnimationFrame(animate) at the end, it should always be running.
+                    // We only need to inform the loop that it can start executing the code again.
+                }
+            });
+
+            // Start the Bouncing Animation Loop
+            requestAnimationFrame(animate);
+        });
+    </script>
+
+</body>
+</html>
